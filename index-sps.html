@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="keywords" content="京大,京都大学,iPhone,設定,Wi-Fi,無線LAN,MIAKO,VPN,KUINS_PPTP,メール">
+    <meta name="description" content="入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), の設定を一括で行うiOS / Mac OSX構成プロファイルを作成します。">
+    <meta property="og:title" content="京大ラクラク設定ツール for iOS / OS X">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.rd.iimc.kyoto-u.ac.jp/">	
+    <meta property="og:description" content="入力された情報に基づき、Wi-Fi (KUINS-Air), VPN (KUINS-PPTP), 全学メール(KUMail)の設定を一括で行う iPhone 構成プロファイルを作成します。">
+    <meta property="og:site_name" content="京大ラクラク設定ツール for iOS / Mac OSX">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <script src="validate-common.js"></script>
+    <title>京大ラクラク設定ツール for iOS / Mac OSX</title>
+  </head>
+  <body>
+    <h1>京大ラクラク設定ツール<br> for iOS / Mac OSX</h1>
+    <p class="right">created by Ryota Kameoka
+    <br />modified by ICT Design and Innovation Office</p>
+    <p>入力された情報に基づき、Wi-Fi (KUINS-Air), VPN (KUINS-PPTP), 全学メール (KUMail) の設定を一括で行うiOS/ Mac OSX構成プロファイルを作成します。</p>
+
+    <hr>
+	<p>このツールは京都大学の教職員向けです。学生向けは<a href="index-ecs.html">こちら</a>です。</p>
+	<hr>
+
+    <p>Safari 以外のブラウザでは正常に動作しない恐れがあります</p>
+
+    <hr>
+
+    <form action="xml_template.php" method="post">
+      <p>SPS-ID</p>
+      <input id="input-ku_id" type="text" name="ku_id" placeholder="taro000kyodai" onblur="validate('sps');" oninput="validate('sps');">
+      <p>全学用メールアドレス</p>
+      <input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.0a" onblur="validate('sps');" oninput="validate('sps');">
+      <p class="right" style="color: #888;">@kyoto-u.ac.jp</p>
+      <input id="input-submit" type="submit" value="ダウンロード" disabled="disabled">
+	  <input id="input-ecs_or_sps" type="hidden" name="ecs_or_sps" value="sps">
+    </form>
+    <hr>
+
+    <p style="text-align: center; margin-top: 5px; margin-bottom: 5px;">
+      ダウンロード後の手順は<a href="./install-sps.html" style="color: #3af;">こちら</a><br>
+      プロファイルの削除方法は<a href="./uninstall-sps.html" style="color: #3af;">こちら</a>
+    </p>
+
+    <hr>
+
+    <small id="policy">
+      <ul>
+        <li>入力されたすべての情報は、iOS / Mac OSX 構成プロファイルの作成と当サービスの改善のみを目的として使用され、第三者(&quot;利用者当人及び京都大学&quot;以外の主体)に情報が送信されることはありません。</li>
+        <li>構成プロファイルのインストール中にパスワードの入力を要求されますが、入力されたパスワードはご利用の端末のみに保存されます。本サービス自体がパスワードを取得することはありません。</li>
+		<li>このアプリケーションは学生コミュニティ<a href="https://camph.net/">CAMPHOR-</a>所属の<a href="http://ryota-ka.me/">Ryota Kameoka</a>氏が開発したプログラムを、京都大学情報環境機構情報システム開発室が「<a href="http://www.rd.iimc.kyoto-u.ac.jp">キャンパスICTラボ</a>」サービスの実例の一つとして提供しています。キャンパスICTラボは試用・検証を目的としたシステムの実験場であり、アプリケーションを使用することによって生じたいかなる損害についても製作者はその責任を負いかねますので、あらかじめご了承ください。</li>
+      </ul>
+    </small>
+	<div class="center">
+	  <a href="http://www.iimc.kyoto-u.ac.jp"><img src="img/iimc_logo.png" class="logo"></a><a href="https://camph.net"><img src="img/camphor-_logo.png" class="logo"></a>
+	</div>
+
+  </body>
+</html>
