@@ -28,11 +28,11 @@
 
     <hr>
 
-    <form action="xml_template.php" method="post">
+    <form action="xml_template.php" method="post" novalidate>
       <p>SPS-ID</p>
-      <input id="input-ku_id" type="text" name="ku_id" placeholder="a0123456" onblur="validate('ecs');" oninput="validate('ecs');">
+      <input id="input-ku_id" type="email" name="ku_id" placeholder="a0123456" onblur="validate('ecs');" oninput="validate('ecs');">
       <p>全学用メールアドレス</p>
-      <input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onblur="validate('ecs');" oninput="validate('ecs');">
+      <input id="input-localpart" type="email" name="localpart" placeholder="kyodai.taro.01a" onblur="validate('ecs');" oninput="validate('ecs');">
       <p class="right" style="color: #888;">@st.kyoto-u.ac.jp</p>
       <input id="input-submit" type="submit" value="ダウンロード" disabled="disabled">
 	  <input id="input-ecs_or_sps" type="hidden" name="ecs_or_sps" value="ecs">
