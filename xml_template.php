@@ -127,7 +127,7 @@ header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobile
 		  <key>PayloadType</key>
 		  <string>com.apple.security.pem</string>
 		  <key>PayloadUUID</key>
-		  <string><$=?$cert_uuid?></string>
+		  <string><?=$cert_uuid?></string>
 		  <key>PayloadCertificateFileName</key>
 		  <string>rad.kuins.kyoto-u.ac.jp.cer</string>
 		  <key>PayloadIdentifier</key>
