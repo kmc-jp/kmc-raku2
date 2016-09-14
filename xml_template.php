@@ -49,7 +49,7 @@ if ($ecs_or_sps == 'ecs'){
   $wifi_uuid = 'AEBBCB20-B0F5-4BD8-B3AA-E467A1510D5D';
   $cert_uuid = '034AE5DD-9456-40FB-81E5-8F3B8EF0F9EC';
   $mail_uuid = '4FB7D839-BA57-47E2-9C7B-F96BAC4F52D7';
-  $vpn_uuid = '7C1B2F19-CAA4-4263-AD56-ABCF96CC3D8A';
+  $vpn_uuid =  '88DBBE50-7A3E-11E6-8B77-86F30CA893D3';
   $prof_uuid = 'C64F3EE5-687D-4B2D-8B1B-997C259E4C76';
 }else{
   $profile_desc = '京都大学教職員';
@@ -64,7 +64,7 @@ if ($ecs_or_sps == 'ecs'){
   $wifi_uuid = '6D5206ED-D9AA-4087-80F4-C88887D8DDE6';
   $cert_uuid = '3E266968-86E1-486A-B20D-698226C8EE3F';
   $mail_uuid = 'FB32472D-7031-4637-BD44-5E724098408A';
-  $vpn_uuid = '5078FC43-9F4A-4B7B-AF08-6A8FD78E78E1';
+  $vpn_uuid =  'AED00BDE-7A3E-11E6-8B77-86F30CA893D3';
   $prof_uuid = '05CE8056-37B1-41D3-9080-8BED3DF52703';
 }
 
@@ -227,25 +227,27 @@ header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobile
 				<key>OverridePrimary</key>
 				<integer>1</integer>
 			</dict>
-			<key>PPP</key>
+			<key>IKEv2</key>
 			<dict>
+				<key>RemoteAddress</key>
+				<string>ikev2.kuins.kyoto-u.ac.jp</string>
+				<key>LocalIdentifier</key>
+				<string><?=$id?></string>
+				<key>RemoteIdentifier</key>
+				<string>ikev2.kuins.kyoto-u.ac.jp</string>
+				<key>AuthenticationMethod</key>
+				<string>None</string>
+				<key>ExtendedAuthEnabled</key>
+				<integer>1</integer>
 				<key>AuthName</key>
 				<string><?=$id?></string>
-				<key>CCPEnabled</key>
-				<integer>1</integer>
-				<key>CCPMPPE128Enabled</key>
-				<integer>1</integer>
-				<key>CCPMPPE40Enabled</key>
-				<integer>0</integer>
-				<key>CommRemoteAddress</key>
-				<string>pptp0.kuins.kyoto-u.ac.jp</string>
 			</dict>
 			<key>PayloadDescription</key>
 			<string>認証を含め、VPN 設定を構成します。</string>
 			<key>PayloadDisplayName</key>
-			<string>VPN（KUINS-PPTP）</string>
+			<string>VPN（KUINS-IKEv2）</string>
 			<key>PayloadIdentifier</key>
-			<string>jp.ac.kyoto-u.iimc.rd.www.conf-pptp</string>
+			<string>jp.ac.kyoto-u.iimc.rd.www.conf-ikev2</string>
 			<key>PayloadOrganization</key>
 			<string>ICT D&amp;I Office, IIMC, Kyoto University</string>
 			<key>PayloadType</key>
@@ -262,9 +264,9 @@ header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobile
 				<string>http://wpad.kuins.net/proxy.pac</string>
 			</dict>
 			<key>UserDefinedName</key>
-			<string>KUINS-PPTP</string>
+			<string>KUINS-IKEv2</string>
 			<key>VPNType</key>
-			<string>PPTP</string>
+			<string>IKEv2</string>
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
