@@ -270,7 +270,7 @@ header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobile
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
-	<string><?=$profile_desc?>のためのiPhone 構成プロファイルです。Wi-Fi (KUINS-Air), VPN (KUINS-PPTP), <?=$mail_serv_desc?>の設定を一括で行います。</string>
+	<string><?=$profile_desc?>のためのiPhone 構成プロファイルです。Wi-Fi (KUINS-Air), VPN (KUINS-IKEv2), <?=$mail_serv_desc?>の設定を一括で行います。</string>
 	<key>PayloadDisplayName</key>
 	<string>京大ラクラク設定ツール for iOS / OS X</string>
 	<key>PayloadIdentifier</key>
