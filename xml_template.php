@@ -236,9 +236,9 @@ header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobile
 				<key>RemoteIdentifier</key>
 				<string>ikev2.kuins.kyoto-u.ac.jp</string>
 				<key>AuthenticationMethod</key>
-				<string>None</string>
+				<string>Certificate</string>
 				<key>ExtendedAuthEnabled</key>
-				<integer>1</integer>
+				<true/>
 				<key>AuthName</key>
 				<string><?=$id?></string>
 			</dict>
