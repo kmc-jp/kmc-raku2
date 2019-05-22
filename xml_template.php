@@ -6,29 +6,25 @@ $id = trim(filter_input(INPUT_POST, 'ku_id'));
 $errors = 0;
 
 if (!preg_match('/^ecs|sps$/', $ecs_or_sps)) {
-  $errors += 1;
 }
 else{
   if ($ecs_or_sps == 'ecs'){
     if (!preg_match('/^a0[0-9]{6,6}$/', $id)) {
-      $errors += 2;
     }
     if (!preg_match('/^[a-z]+\.[a-z]+\.[a-z0-9]{3,3}$/', $localpart)) {
-      $errors += 4;
     }
   }
   else{
     if (!preg_match('/^[a-z]+[0-9]{3,3}[a-z]+$/', $id)) {
-      $errors += 2;
     }
     if (!preg_match('/^[a-z]+\.[a-z]+\.[a-z0-9]{2,2}$/', $localpart)) {
-      $errors += 4;
     }
   }
 }
 
 if ($errors !== 0) {
-  echo 'invalid values!';
+	echo 'invalid values!';
+	echo $errors;
   exit($errors);
 }
 
@@ -51,11 +47,10 @@ $mail_uuid = '79CAE016-DB3F-4CFE-A8A6-7C95EB68652E';
 $vpn_uuid =  '6A236C39-D52F-43AF-9B42-82AC84C16407';
 $prof_uuid = 'F20A9232-4DFB-4C12-BEA6-AF65E2B1F12D';
 
-header('Content-type: application/x-apple-aspen-config; chatset=utf-8');
-header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobileconfig"');
-?>    
-
-<?xml version="1.0" encoding="UTF-8"?>
+header('Content-type: application/xml; chatset=utf-8');
+// header('Content-type: application/x-apple-aspen-config; chatset=utf-8');
+// header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobileconfig"');
+echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -63,32 +58,27 @@ header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobile
 	<array>
 		<dict>
 			<key>SSID_STR</key>
-			<string>KUINS-Air</string>
+			<string>KMC_ENTERPRISE</string>
 			<key>HIDDEN_NETWORK</key>
 			<false/>
 			<key>AutoJoin</key>
 			<true/>
-            <key>EncryptionType</key>
+      <key>EncryptionType</key>
 			<string>WPA</string>
 			<key>PayloadDescription</key>
 			<string>ワイヤレス接続設定を構成します。</string>
 			<key>PayloadDisplayName</key>
-			<string>Wi-Fi（KUINS-Air）</string>
+			<string>Wi-Fi（KMC-ENTERPRISE）</string>
 			<key>PayloadIdentifier</key>
-			<string>jp.ac.kyoto-u.iimc.rd.www.conf-air</string>
+			<string>jp.gr.kmc.wifi-setting-kun</string>
 			<key>PayloadOrganization</key>
-			<string>ICT D&amp;I Office, IIMC, Kyoto University</string>
+			<string>Kyoto Univ, Microcomputer Club</string>
 			<key>PayloadType</key>
 			<string>com.apple.wifi.managed</string>
 			<key>PayloadUUID</key>
 			<string><?=$wifi_uuid?></string>
 			<key>PayloadVersion</key>
 			<integer>1</integer>
-			<key>ProxyType</key>
-			<string>Auto</string>
-			<key>ProxyPACURL</key>
-			<string>http://wpad.kuins.net/proxy.pac</string>
-            <key>EAPClientConfiguration</key>                                  
 			<dict>
 			  <key>UserName</key>
 			  <string><?=$id?></string>
@@ -102,7 +92,7 @@ header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobile
 			  </array>
 			  <key>TLSTrustedServerNames</key>
 			  <array>
-				<string>*.kuins.kyoto-u.ac.jp</string>
+				<string>radius.box2.kmc.gr.jp</string>
 			  </array>
 			</dict>
 		</dict>
@@ -112,13 +102,13 @@ header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobile
 		  <key>PayloadUUID</key>
 		  <string><?=$cert_uuid?></string>
 		  <key>PayloadCertificateFileName</key>
-		  <string>rad.kuins.kyoto-u.ac.jp.cer</string>
+		  <string>radius.box2.kmc.gr.jp.cer</string>
 		  <key>PayloadIdentifier</key>
-		  <string>jp.ac.kyoto-u.iimc.rd.www.conf-cert</string>
+		  <string>jp.gr.kmc.radius.www.conf-cert</string>
 		  <key>PayloadDescription</key>
-		  <string>KUINS-Airネットワークの安全な接続を保守する証明書です</string>
+		  <string>KMCネットワークの安全な接続を保守する証明書です</string>
 		  <key>PayloadDisplayName</key>
-		  <string>KUINS-Air Radiusサーバ証明書</string>
+		  <string>KMC Radiusサーバ証明書</string>
 		  <key>PayloadVersion</key>
 		  <integer>1</integer>
 		  <key>PayloadContent</key>
