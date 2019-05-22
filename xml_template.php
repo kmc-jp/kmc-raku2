@@ -45,11 +45,11 @@ $mail_serv_out_host = 'smtp.kmc.gr.jp';
 $mail_serv_out_port = '587';
 $mail_addr_domain = '@kmc.gr.jp';
 $mail_id = $id . $mail_addr_domain;
-$wifi_uuid = 'AEBBCB20-B0F5-4BD8-B3AA-E467A1510D5D';
-$cert_uuid = '034AE5DD-9456-40FB-81E5-8F3B8EF0F9EC';
-$mail_uuid = '4FB7D839-BA57-47E2-9C7B-F96BAC4F52D7';
-$vpn_uuid =  '88DBBE50-7A3E-11E6-8B77-86F30CA893D3';
-$prof_uuid = 'C64F3EE5-687D-4B2D-8B1B-997C259E4C76';
+$wifi_uuid = '114286CE-40C8-4D01-90FD-D124AFD73FE2';
+$cert_uuid = '39D76E78-F7C3-42F3-A4DE-EB6B9E6BA235';
+$mail_uuid = '79CAE016-DB3F-4CFE-A8A6-7C95EB68652E';
+$vpn_uuid =  '6A236C39-D52F-43AF-9B42-82AC84C16407';
+$prof_uuid = 'F20A9232-4DFB-4C12-BEA6-AF65E2B1F12D';
 
 header('Content-type: application/x-apple-aspen-config; chatset=utf-8');
 header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobileconfig"');
