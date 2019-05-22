@@ -36,37 +36,20 @@ date_default_timezone_set('Asia/Tokyo');
 $log_message = date('Y-m-d h:i:s') . ' xml requested by ' . $id . "\n";
 error_log($log_message, 3, 'log/users.log');
 
-if ($ecs_or_sps == 'ecs'){
-  $profile_desc = '京都大学学生';
-  $mail_serv_desc = '学生用メール(KUMOI)';
-  $mail_serv_name = 'KUMOI';
-  $mail_serv_in_host = 'outlook.office365.com';
-  $mail_serv_in_port = '993';
-  $mail_serv_out_host = 'smtp.office365.com';  
-  $mail_serv_out_port = '587';
-  $mail_addr_domain = '@st.kyoto-u.ac.jp';
-  $mail_id = $id . $mail_addr_domain;
-  $wifi_uuid = 'AEBBCB20-B0F5-4BD8-B3AA-E467A1510D5D';
-  $cert_uuid = '034AE5DD-9456-40FB-81E5-8F3B8EF0F9EC';
-  $mail_uuid = '4FB7D839-BA57-47E2-9C7B-F96BAC4F52D7';
-  $vpn_uuid =  '88DBBE50-7A3E-11E6-8B77-86F30CA893D3';
-  $prof_uuid = 'C64F3EE5-687D-4B2D-8B1B-997C259E4C76';
-}else{
-  $profile_desc = '京都大学教職員';
-  $mail_serv_desc = '全学メール(KUMail)';
-  $mail_serv_name = 'KUMail';
-  $mail_serv_in_host = 'mail.iimc.kyoto-u.ac.jp';
-  $mail_serv_in_port = '993';
-  $mail_serv_out_host = 'mail.iimc.kyoto-u.ac.jp';  
-  $mail_serv_out_port = '465';
-  $mail_addr_domain = '@kyoto-u.ac.jp';
-  $mail_id = $id;
-  $wifi_uuid = '6D5206ED-D9AA-4087-80F4-C88887D8DDE6';
-  $cert_uuid = '3E266968-86E1-486A-B20D-698226C8EE3F';
-  $mail_uuid = 'FB32472D-7031-4637-BD44-5E724098408A';
-  $vpn_uuid =  'AED00BDE-7A3E-11E6-8B77-86F30CA893D3';
-  $prof_uuid = '05CE8056-37B1-41D3-9080-8BED3DF52703';
-}
+$profile_desc = '京都大学学生';
+$mail_serv_desc = '学生用メール(KUMOI)';
+$mail_serv_name = 'KUMOI';
+$mail_serv_in_host = 'outlook.office365.com';
+$mail_serv_in_port = '993';
+$mail_serv_out_host = 'smtp.office365.com';  
+$mail_serv_out_port = '587';
+$mail_addr_domain = '@st.kyoto-u.ac.jp';
+$mail_id = $id . $mail_addr_domain;
+$wifi_uuid = 'AEBBCB20-B0F5-4BD8-B3AA-E467A1510D5D';
+$cert_uuid = '034AE5DD-9456-40FB-81E5-8F3B8EF0F9EC';
+$mail_uuid = '4FB7D839-BA57-47E2-9C7B-F96BAC4F52D7';
+$vpn_uuid =  '88DBBE50-7A3E-11E6-8B77-86F30CA893D3';
+$prof_uuid = 'C64F3EE5-687D-4B2D-8B1B-997C259E4C76';
 
 header('Content-type: application/x-apple-aspen-config; chatset=utf-8');
 header('Content-Disposition: attachment; filename="kyodairaku2' . $id . '.mobileconfig"');
